@@ -1,12 +1,5 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { isAddress } from 'viem';
 import { useAppKitAccount } from "@reown/appkit/react";
-
-import { error } from '../utils/toast';
-import { useGetCid } from '../hooks/useCids';
-import { fetchIpfs } from '../lib/ipfs';
 
 import ProfileCard from '../components/ProfileCard';
 import { useProfileGet } from '../hooks/useProfileGet';

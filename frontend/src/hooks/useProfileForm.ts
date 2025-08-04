@@ -8,13 +8,6 @@ type newLinks = {
     id: string;
 }
 
-type Link = {
-    social: string
-    title: string;
-    link: string;
-    id: string;
-}
-
 export const useProfileForm = () => {
 
     // Personal info

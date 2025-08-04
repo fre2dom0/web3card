@@ -9,7 +9,6 @@ import { sepolia } from '@reown/appkit/networks'
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi'
 
 import App from './App.tsx'
-import { config } from './wagmi.ts'
 
 import './index.css'
 

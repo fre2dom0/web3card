@@ -52,9 +52,9 @@ export const useProfileGet = ({address, urlWalletAddress}: ProfileGetProps) => {
                     const {data} = await fetchIpfs(ipfsData as string);
                     setCard({
                         address: cardAddress ,
-                        name: data?.name || null,
-                        bio: data?.bio || null,
-                        avatar: data?.avatar || null,
+                        name: data?.name || '',
+                        bio: data?.bio || '',
+                        avatar: data?.avatar || '',
                         theme: data?.theme || [],
                         socials: data?.socials || [],
                     })

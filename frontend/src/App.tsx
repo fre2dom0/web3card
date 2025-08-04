@@ -4,7 +4,6 @@ import Navbar from './layout/Navbar'
 import Profile from './pages/Profile'
 
 function App() {
-
     
     return (
         <div className='bg-theme-1 min-h-screen font-mono text-shadow-lg'>

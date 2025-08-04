@@ -11,7 +11,7 @@ type BioP = {
 }
 
 const Bio = ({ bio, maxChar, className, editMode, setBio, onFocus, onBlur }: BioP) => {
-    if (!editMode) return <p className={`${className} text-md text-center`}>{bio || bio?.trim() !== '' ? bio : 'No Bio'}</p>;
+    if (!editMode) return <p className={`${className} text-md text-center`}>{bio || bio?.trim() !== '' ? bio : ''}</p>;
     else {
         return (
             <div className="w-full relative">

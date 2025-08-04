@@ -45,9 +45,11 @@ export const useProfileGet = ({address, urlWalletAddress}: ProfileGetProps) => {
      * Else only sets address
     */
     useEffect(() => {
+        console.log(ipfsData)
         const handleCard = async () => {
             setUploading(true);
             try {
+                const root = document.documentElement;
                 if (isSuccess && ipfsData !== '') {
                     const {data} = await fetchIpfs(ipfsData as string);
                     setCard({
@@ -59,7 +61,7 @@ export const useProfileGet = ({address, urlWalletAddress}: ProfileGetProps) => {
                         socials: data?.socials || [],
                     })
 
-                    const root = document.documentElement;
+                    console.log(data)
                     if (data?.theme) {
                         root.style.setProperty("--color-theme-4", data?.theme[3]);
                         root.style.setProperty("--color-theme-3", data?.theme[2]);
@@ -75,15 +77,21 @@ export const useProfileGet = ({address, urlWalletAddress}: ProfileGetProps) => {
                         root.style.setProperty("--toastify-icon-color-error", '00FF41');
                         root.style.setProperty("--toastify-color-progress-error", '00FF41');
                     }
-
                 } else {
-                    setCard((prev) => {
-                        if (!prev) return null;
-                        return {
-                            ...prev,
-                            address: cardAddress
-                        };
-                    });
+                    setCard({
+                        address: cardAddress ,
+                        name: '',
+                        bio: '',
+                        avatar: '',
+                        theme: [],
+                        socials: [],
+                    })
+                    root.style.setProperty("--color-theme-4", '#00FF41');
+                    root.style.setProperty("--color-theme-3", '#008F11');
+                    root.style.setProperty("--color-theme-2", '#003B00');
+                    root.style.setProperty("--color-theme-1", '#0D0208');
+                    root.style.setProperty("--toastify-icon-color-error", '00FF41');
+                    root.style.setProperty("--toastify-color-progress-error", '00FF41');
                 }
             } catch (err) {
                 console.log(err);

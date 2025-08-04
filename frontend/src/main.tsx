@@ -23,7 +23,7 @@ const projectId = '7e401a5361c34ba416a48e83a75b966d'
 const metadata = {
   name: 'Web3Card',
   description: 'Web3Card is a profile system for web3.0 ecosystem.',
-  url: 'http://localhost:5173', // origin must match your domain & subdomain
+  url: 'https://web3card-beta.vercel.app', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
